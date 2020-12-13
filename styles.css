@@ -157,3 +157,78 @@ body {
     height: 80px;
     color: #525252;
 }
+
+#btns {
+    margin-top: 5vh;
+    position: relative;
+
+}
+
+#start,
+#up {
+    background-color: none;
+    outline: none;
+    border: none;
+    /* cursor: pointer; */
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+}
+
+#start {
+    margin-right: 40px;
+    height: 30px;
+    /* width: 125px; */
+
+}
+
+#start:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.startimg {
+    height: 30px;
+    /* width: 125px; */
+}
+
+#up {
+    margin-left: 40px;
+    height: 30px;
+    width: 30px;
+}
+
+#up:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.upimg {
+    height: 30px;
+    width: 30px;
+}
+
+@media screen and (max-width: 1000px) {
+
+    #start {
+        margin-right: 60px;
+    }
+
+    #up {
+        margin-left: 60px;
+    }
+
+
+    #start,
+    .startimg {
+        height: 80px;
+    }
+
+    #up,
+    .upimg {
+        height: 80px;
+        width: 80px;
+
+    }
+
+}
