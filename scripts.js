@@ -1,3 +1,10 @@
+// backsound using mousdown html
+// var jumping = new Audio();
+// jumping.src = "assets/jump.wav";
+
+// var run = new Audio();
+// run.src = "assets/run.wav";
+
 // variabel untuk DOM selector
 
 let game = document.querySelector("#game");
@@ -12,10 +19,15 @@ let score = document.querySelector("#score");
 let instruction = document.querySelector("#instruction");
 let gameOver = document.querySelector("#gameOver");
 
+let starting = document.querySelector("#starting");
+let upup = document.querySelector("#upup");
+let crashing = document.querySelector("#crashing");
+
 
 //deklarasi variabel score
 let interval = null;
 let playerScore = 0;
+
 
 //DOM nilai score
 let scoreCounter = () => {
@@ -31,7 +43,10 @@ window.addEventListener("keydown", (start) => {
 
     if (start.code == "Space") {
 
+        starting.play();
+
         gameOver.style.display = "none";
+
         instruction.style.display = "none";
 
         enemy.classList.add("enemyActive");
@@ -41,12 +56,17 @@ window.addEventListener("keydown", (start) => {
         road.firstElementChild.style.animation = "roadAnimate 2s linear infinite";
         
         interval = setInterval(scoreCounter, 200);
+        
     }
 });
 
 // click event
 document.getElementById('start').onclick = function() {
+
+    starting.play();
+
     gameOver.style.display = "none";
+
     instruction.style.display = "none";
 
     enemy.classList.add("enemyActive");
@@ -59,12 +79,15 @@ document.getElementById('start').onclick = function() {
 }
 
 
-
 //Melompat
 window.addEventListener("keydown", (x) => {
 
     if (x.key == "ArrowUp")
+
+    upup.play();
+       
         if (tree.classList != "treeActive") {
+
             tree.classList.add("treeActive");
 
             //menghapus class setelah 500 mili second
@@ -76,6 +99,9 @@ window.addEventListener("keydown", (x) => {
 
 // click event
 document.getElementById('up').onclick = function() {
+
+    upup.play();
+
     if (tree.classList != "treeActive") {
         tree.classList.add("treeActive");
 
@@ -89,6 +115,7 @@ document.getElementById('up').onclick = function() {
 
 //Tabrakan
 let result = setInterval(() => {
+
     let treeBottom = parseInt(getComputedStyle(tree).getPropertyValue("bottom"));
 
     let enemyLeft = parseInt(getComputedStyle(enemy).getPropertyValue("left"));
@@ -96,6 +123,7 @@ let result = setInterval(() => {
     if (treeBottom <= 90 && enemyLeft >= 20 && enemyLeft <= 145) {
 
         gameOver.style.display = "block";
+        crashing.play();
         
         cloud.firstElementChild.style.animation = "none";
         road.firstElementChild.style.animation = "none";
@@ -107,5 +135,6 @@ let result = setInterval(() => {
         score.innerHTML = `My Score :  <b>${playerScore}</b>`
         playerScore = 0;
     }
-
 }, 100);
+
+
