@@ -169,14 +169,15 @@ body {
     background-color: none;
     outline: none;
     border: none;
+    border-radius: 50%;
     /* cursor: pointer; */
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
 }
 
 #start {
     margin-right: 40px;
-    height: 30px;
-    /* width: 125px; */
+    height: 100px;
+    width: 100px;
 
 }
 
@@ -187,14 +188,14 @@ body {
 }
 
 .startimg {
-    height: 30px;
-    /* width: 125px; */
+    height: 100px;
+    width: 100px;
 }
 
 #up {
     margin-left: 40px;
-    height: 30px;
-    width: 30px;
+    height: 100px;
+    width: 100px;
 }
 
 #up:hover {
@@ -204,8 +205,8 @@ body {
 }
 
 .upimg {
-    height: 30px;
-    width: 30px;
+    height: 100px;
+    width: 100px;
 }
 
 @media screen and (max-width: 1000px) {
@@ -221,13 +222,14 @@ body {
 
     #start,
     .startimg {
-        height: 80px;
+        height: 200px;
+        width: 200px;
     }
 
     #up,
     .upimg {
-        height: 80px;
-        width: 80px;
+        height: 200px;
+        width: 200px;
 
     }
 
